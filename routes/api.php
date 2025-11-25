@@ -11,7 +11,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
-Route::get('/get-categories', [CategoryController::class, 'getCategories'])->name('getCategories');
+Route::get('/get-categories', [CategoryController::class, 'getCategories'])->name('api.getCategories');
 Route::get('/get-subcategories/{id}', [CategoryController::class, 'getSubCategories'])->name('getSubCategories');
 Route::get('/Main-Category', [CategoryController::class, 'MainCategoryPage'])->name('MainCategoryPage');
 Route::get('/Main-Category/List', [CategoryController::class, 'getMainCategoryList'])->name('getMainCategoryList');
