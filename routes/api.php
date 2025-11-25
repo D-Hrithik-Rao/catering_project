@@ -16,34 +16,34 @@ Route::get('/get-subcategories/{id}', [CategoryController::class, 'getSubCategor
 Route::get('/Main-Category', [CategoryController::class, 'MainCategoryPage'])->name('api.MainCategoryPage');
 Route::get('/Main-Category/List', [CategoryController::class, 'getMainCategoryList'])->name('api.getMainCategoryList');
 Route::post('/Main-Category/Create', [CategoryController::class, 'createCategory'])->name('api.createCategory');
-Route::get('/Main-Category/Detail/{id}', [CategoryController::class, 'categoryDetail'])->name('categoryDetail');
+Route::get('/Main-Category/Detail/{id}', [CategoryController::class, 'categoryDetail'])->name('api.categoryDetail');
 Route::post('/Category/update-position', [CategoryController::class, 'updateCategoryPosition']);
 Route::post('/Category/update-status', [CategoryController::class, 'updateCategoryStatus']);
 Route::put('/Update-Category', [CategoryController::class, 'updateCategoryName']);
 Route::delete('/Category/delete/{id}', [CategoryController::class, 'deleteCategory']);
 
 // Sub Category
-Route::get('/Sub-Category', [SubCategoryController::class, 'SubCategoryPage'])->name('SubCategoryPage');
-Route::get('/Main-Category/StatuswiseList', [SubCategoryController::class, 'MainCategoryList'])->name('MainCategoryList');
-Route::post('/Sub-Category/Create', [SubCategoryController::class, 'subCategoryCreate'])->name('subCategoryCreate');
-Route::get('/Sub-Category/List', [SubCategoryController::class, 'subCategoryList'])->name('subCategoryList');
-Route::get('/Sub-Category/Detail/{id}', [SubCategoryController::class, 'subCategoryDetail'])->name('subCategoryDetail');
+Route::get('/Sub-Category', [SubCategoryController::class, 'SubCategoryPage'])->name('api.SubCategoryPage');
+Route::get('/Main-Category/StatuswiseList', [SubCategoryController::class, 'MainCategoryList'])->name('api.MainCategoryList');
+Route::post('/Sub-Category/Create', [SubCategoryController::class, 'subCategoryCreate'])->name('api.subCategoryCreate');
+Route::get('/Sub-Category/List', [SubCategoryController::class, 'subCategoryList'])->name('api.subCategoryList');
+Route::get('/Sub-Category/Detail/{id}', [SubCategoryController::class, 'subCategoryDetail'])->name('api.subCategoryDetail');
 Route::post('/Sub-Category/update-status', [SubCategoryController::class, 'updateSubCategoryStatus']);
 Route::put('/Update-Sub-Category', [SubCategoryController::class, 'updateSubCategory']);
 Route::delete('/Sub-Category/delete/{id}', [SubCategoryController::class, 'deleteSubCategory']);
 Route::get('/fetch-child-categories/{id}', [SubCategoryController::class, 'FetchSubCategoryId']);
 
 // ManageItem
-Route::get('/Create-Item/Page', [ManageItem::class, 'getItemPage'])->name('getItemPage');
-Route::get('/Item-List/Page', [ManageItem::class, 'getItemListPage'])->name('getItemListPage');
-Route::get('/Sub-Category/{id}', [ManageItem::class, 'SubCategoryList'])->name('SubCategoryList');
+Route::get('/Create-Item/Page', [ManageItem::class, 'getItemPage'])->name('api.getItemPage');
+Route::get('/Item-List/Page', [ManageItem::class, 'getItemListPage'])->name('api.getItemListPage');
+Route::get('/Sub-Category/{id}', [ManageItem::class, 'SubCategoryList'])->name('api.SubCategoryList');
 Route::post('/items/create', [ManageItem::class, 'createItem']);
-Route::get('/Item/List', [ManageItem::class, 'getItemList'])->name('getItemList');
-Route::get('/Item/Detail/{id}', [ManageItem::class, 'itemDetail'])->name('itemDetail');
-Route::get('/Main-Category/items/{id}', [ManageItem::class, 'getItems'])->name('getItems');
-Route::get('/Main-Category/Sub-category/{id}', [ManageItem::class, 'FetchTitle'])->name('FetchTitle');
-Route::get('/Item/Update/{id}', [ManageItem::class, 'itemUpdatePage'])->name('itemUpdatePage');
-Route::put('/Update/Item/{id}', [ManageItem::class, 'updateItem'])->name('updateItem');
-Route::delete('/Delete/Item/{id}', [ManageItem::class, 'deleteItem'])->name('deleteItem');
+Route::get('/Item/List', [ManageItem::class, 'getItemList'])->name('api.getItemList');
+Route::get('/Item/Detail/{id}', [ManageItem::class, 'itemDetail'])->name('api.itemDetail');
+Route::get('/Main-Category/items/{id}', [ManageItem::class, 'getItems'])->name('api.getItems');
+Route::get('/Main-Category/Sub-category/{id}', [ManageItem::class, 'FetchTitle'])->name('api.FetchTitle');
+Route::get('/Item/Update/{id}', [ManageItem::class, 'itemUpdatePage'])->name('api.itemUpdatePage');
+Route::put('/Update/Item/{id}', [ManageItem::class, 'updateItem'])->name('api.updateItem');
+Route::delete('/Delete/Item/{id}', [ManageItem::class, 'deleteItem'])->name('api.deleteItem');
 
 Route::post('/place-order', [OrderController::class, 'placeOrder']);
