@@ -13,7 +13,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/get-categories', [CategoryController::class, 'getCategories'])->name('api.getCategories');
 Route::get('/get-subcategories/{id}', [CategoryController::class, 'getSubCategories'])->name('api.getSubCategories');
-Route::get('/Main-Category', [CategoryController::class, 'MainCategoryPage'])->name('MainCategoryPage');
+Route::get('/Main-Category', [CategoryController::class, 'MainCategoryPage'])->name('api.MainCategoryPage');
 Route::get('/Main-Category/List', [CategoryController::class, 'getMainCategoryList'])->name('getMainCategoryList');
 Route::post('/Main-Category/Create', [CategoryController::class, 'createCategory'])->name('createCategory');
 Route::get('/Main-Category/Detail/{id}', [CategoryController::class, 'categoryDetail'])->name('categoryDetail');
